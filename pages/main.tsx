@@ -3,6 +3,7 @@ import { DesktopOutlined, FileOutlined, PieChartOutlined, } from '@ant-design/ic
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme, Table, Tag, Space, Row, Col } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import CrawlStatus from '../components/CrawlStatus'
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -124,6 +125,9 @@ const App: React.FC = () => {
       <Layout className="site-layout">
         <Header style={{ padding: 0, background: colorBgContainer }} />
         <Content style={{ margin: '0 16px' }}>
+          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
+            <CrawlStatus />
+          </div>
           <Breadcrumb style={{ margin: '16px 0' }}>
             <Breadcrumb.Item>User</Breadcrumb.Item>
             <Breadcrumb.Item>Bill</Breadcrumb.Item>
@@ -136,9 +140,6 @@ const App: React.FC = () => {
               <Table columns={columns} dataSource={data} />
             </Col>
           </Row>
-          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-            Bill is a cat.
-          </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}> ©2023 REDOM</Footer>
       </Layout>
